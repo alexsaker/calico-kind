@@ -24,7 +24,7 @@ helm show values https://github.com/projectcalico/calico/releases/download/v3.18
 helm install calico https://github.com/projectcalico/calico/releases/download/v3.18.4/tigera-operator-v3.18.4-1.tgz -f calico/calico-values.yaml --wait
 
 
-kubectl -n calico-sytem set env daemonset/calico-node FELIX_IGNORELOOSERPF=true
+kubectl -n calico-system set env daemonset/calico-node FELIX_IGNORELOOSERPF=true
 kubectl taint node calico-cluster-control-plane kubernetes.io/hostname=calico-cluster-control-plane:NoSchedule
 ```
 
